@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class calculation
+{
+public:
+int a,b;
+int c,d;
+};
+class getvaluessum:public calculation
+{
+public:
+int getvalues(){
+cout<<"\nenter two numbers to add: ";
+cin>>a>>b;
+return a+b;
+}
+};
+class getvaluessub:public calculation
+{
+public:
+int getvalue(){
+cout<<"\nenter two numbers to substract: ";
+cin>>c>>d;
+return c-d;
+}
+};
+class performsum:public getvaluessum
+{
+public:
+void displaysum(){
+cout<<"\naddition of given numbers is: "<<a+b;
+}
+};
+class performsub:public getvaluessub
+{
+public:
+void displaysub(){
+cout<<"\nsubstraction of given numbers is: "<<a-b;
+}
+};
+int main()
+{
+calculation c;
+getvaluessum gsum;
+getvaluessub gsub;
+performsum psum;
+performsub psub;
+calculation();
+gsum.getvalues();
+gsub.getvalue();
+psum.displaysum();
+psub.displaysub();
+return 0;
+}
+
